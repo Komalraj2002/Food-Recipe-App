@@ -1,0 +1,10 @@
+npx create-react-app food-reacipe-app
+npm install react-router-dom becoz we shift from one page to another in the app
+npm install --save-dev prettier
+npm install -D tailwindcss@3  (latestf)
+npx tailwindcss init 
+then add 3 line in the index.css
+then import and use brouserrouter in index.js
+then we make navbar (it is used everywhere) , home , favorites , details page folder 
+then we make the routes rote for all the pages in the app.js file
+the details path in app.js has path diffret because it rends diffrent things ecerytime so we have given an id there
