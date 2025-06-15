@@ -5,10 +5,11 @@ import RecipeItem from "../../components/recipe-item";
 export default function Home() {
   const { recipeList, loading } = useContext(GlobalContext);
   if (loading) {
+    
     <div>Loading...Please wait</div>;
   }
   return (
-    <div className="py-8 container mx-auto flex flex-wrap justify-center gp-10 ">
+    <div className="py-8 container mx-auto flex flex-wrap justify-center  gap-8 ">
       {recipeList && recipeList.length > 0 ? (
         recipeList.map((item) => <RecipeItem item={item} />)
       ) : (

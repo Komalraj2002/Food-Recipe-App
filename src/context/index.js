@@ -5,6 +5,8 @@ export default function GlobalState({ children }) {
   const [searchParam, setSearchParam] = useState(" ");
   const [loading, setLoading] = useState(false);
   const [recipeList, setRecipeList] = useState([]);
+  const [recipeDetailsData, setRecipeDetailData] = useState(null);
+  const [favoritesList, setFavoritesList] = useState([]);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -27,10 +29,37 @@ export default function GlobalState({ children }) {
       setSearchParam("");
     }
   }
-  console.log(searchParam, loading, recipeList);
+
+  function handleAddToFavorites(getCurrentItem) {
+    console.log(getCurrentItem);
+    let cpyFavoriteList = [...favoritesList];
+    const index = cpyFavoriteList.findIndex(
+      (item) => item.id === getCurrentItem.id
+    );
+    if (index === -1) {
+      // if item not present in cpyfavoritelist
+      cpyFavoriteList.push(getCurrentItem);
+    } else {
+      cpyFavoriteList.splice(getCurrentItem);
+    }
+    setFavoritesList(cpyFavoriteList);
+  }
+
+  console.log( "favoritesList" ,  favoritesList);
   return (
     <GlobalContext.Provider
-      value={{ loading, recipeList, searchParam, setSearchParam, handleSubmit }}
+      value={{
+        loading,
+        recipeList,
+        searchParam,
+        setSearchParam,
+        handleSubmit,
+        recipeDetailsData,
+        setRecipeDetailData,
+        handleAddToFavorites,
+        favoritesList,
+      
+      }}
     >
       {children}
     </GlobalContext.Provider>

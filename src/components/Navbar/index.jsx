@@ -11,7 +11,7 @@ export default function Navbar() {
     <nav className="flex justify-between items-center py-8 container mx-auto flex-col lg:flex-row gap-5 lg:gap-0">
       <h2 className="text-2xl ont-semibold">
         <NavLink to="/" className="text-black hover:text-grey-700 duration-300">
-          Food Recipie App
+          Food Recipe App
         </NavLink>
       </h2>
       <form onSubmit={handleSubmit}>
