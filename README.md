@@ -59,6 +59,4 @@ Clicking on a recipe shows a dedicated view with:
 * Modular component architecture for easy scalability and code reuse
 * Clean folder structure following best practices (e.g., `components`, `pages`, `context`, `utils`)
 
----
 
-Let me know if you'd like a **README.md**, folder structure breakdown, or sample components to go with this!
